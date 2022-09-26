@@ -14,5 +14,10 @@ const students = [
     name: "Janet Dane",
     age: 19,
   },
+  {
+    id: 4,
+    name: "Rocket",
+    age: 31,
+  },
 ];
 export default students;
