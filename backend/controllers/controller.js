@@ -51,6 +51,10 @@ class Controller {
     if (index > -1) {
       // only splice array when item is found
       students.splice(index, 1); // 2nd parameter means remove one item only
+    } else {
+      return res.status(404).json({
+        message: "Student record not found",
+      });
     }
     return res.status(200).json({
       students,
