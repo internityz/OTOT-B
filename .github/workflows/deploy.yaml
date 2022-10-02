@@ -18,7 +18,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Generate deployment package
-        run: zip -r deploy.zip * -x "**node_modules**"
+        run: zip -r deploy.zip frontend -x "**node_modules**"
 
       - name: Get timestamp
         uses: gerred/actions/current-time@master
@@ -34,7 +34,7 @@ jobs:
           flags: "g"
 
       - name: Beanstalk Deploy for app
-        uses: einaregilsson/beanstalk-deploy@v10
+        uses: einaregilsson/beanstalk-deploy@v20
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
