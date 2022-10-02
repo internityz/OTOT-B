@@ -1,4 +1,4 @@
-import students from "../dummy/student.js";
+import students from "../student.js";
 
 class Controller {
   // Get all students
@@ -24,7 +24,7 @@ class Controller {
   // Add a student
   static addStudent(req, res) {
     const arr = req.params.info.split("-");
-    students.push({ id: students.length + 1, name: arr[0], age: parseInt(arr[1]) });
+    students.push({ id: students[students.length - 1].id + 1, name: arr[0], age: parseInt(arr[1]) });
     return res.status(200).json({
       students,
       message: "Added student",
