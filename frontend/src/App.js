@@ -13,11 +13,11 @@ function App() {
   };
 
   const onRetrieve = async () => {
-    const res = await axios.get("http://localhost:8000/").catch((err) => {
+    const res = await axios.get("http://localhost:8000/all").catch((err) => {
       console.log(err);
     });
 
-    console.log(res);
+    console.log(res.data.students);
     setStudents(res.data.students);
   };
 
