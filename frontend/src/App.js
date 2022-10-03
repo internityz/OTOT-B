@@ -1,4 +1,6 @@
-import List from "./components/List";
+import StudentList from "./components/StudentList";
+import WeatherList from "./components/WeatherList";
+
 import axios from "axios";
 import { useState } from "react";
 
@@ -39,11 +41,22 @@ function App() {
     setStudents(res.data.students);
   };
 
+  const getWeather = async () => {
+    const res = await axios.get(`https://ee1xq794id.execute-api.ap-southeast-1.amazonaws.com/beta`).catch((err) => {
+      console.log(err);
+    });
+    console.log(res.data.body);
+    setWeather(res.data.body);
+  };
+
   const [students, setStudents] = useState([]);
+  const [weatherList, setWeather] = useState([]);
 
   return (
     <div className="App">
-      <List students={students} onRemove={onRemove} onRetrieve={onRetrieve} onAdd={onAdd} onUpdate={onUpdate} />
+      <StudentList students={students} onRemove={onRemove} onRetrieve={onRetrieve} onAdd={onAdd} onUpdate={onUpdate} />
+
+      <WeatherList getWeather={getWeather} weatherList={weatherList} />
     </div>
   );
 }
