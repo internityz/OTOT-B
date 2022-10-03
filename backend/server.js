@@ -6,7 +6,7 @@ import cors from "cors";
 // Instantiate express
 const app = express();
 
-app.use(express.static("frontend/build"));
+app.use(express.static("/static"));
 app.use(cors()); // config cors so that front-end can use
 // Set our port
 const port = process.env.PORT || 8000;

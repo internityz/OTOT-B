@@ -6,14 +6,14 @@ function App() {
   const onRemove = async (student) => {
     const r = students.filter((x) => x.id !== student.id);
     setStudents(r);
-    const res = await axios.delete(`http://localhost:8000/${student.id}`).catch((err) => {
+    const res = await axios.delete(`/${student.id}`).catch((err) => {
       console.log(err);
     });
     console.log(res);
   };
 
   const onRetrieve = async () => {
-    const res = await axios.get("http://localhost:8000/all").catch((err) => {
+    const res = await axios.get("/all").catch((err) => {
       console.log(err);
     });
 
@@ -22,7 +22,7 @@ function App() {
   };
 
   const onAdd = async (student) => {
-    const res = await axios.post(`http://localhost:8000/${student}`).catch((err) => {
+    const res = await axios.post(`/${student}`).catch((err) => {
       console.log(err);
     });
 
@@ -31,7 +31,7 @@ function App() {
   };
 
   const onUpdate = async (student) => {
-    const res = await axios.put(`http://localhost:8000/${student}`).catch((err) => {
+    const res = await axios.put(`/${student}`).catch((err) => {
       console.log(err);
     });
 
