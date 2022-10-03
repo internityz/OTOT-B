@@ -9,7 +9,7 @@
     "test": "mocha --require babel-register tests/*.js --exit",
     "dev": "nodemon --exec babel-node --presets babel-preset-env /backend/server.js",
     "build:frontend": "cd frontend && npm install && npm run build",
-    "build:backend": "cd backend && npm install",
+    "build:backend": "cd backend && npm install && npm run build",
     "build": "npm run build:frontend && npm run build:backend",
     "start": "node ./backend/server.js"
   },
