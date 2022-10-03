@@ -6,7 +6,7 @@ import cors from "cors";
 // Instantiate express
 const app = express();
 app.use(cors()); // config cors so that front-end can use
-
+app.use(express.static("frontend/build"));
 // Set our port
 const port = process.env.PORT || 8000;
 // Configure app to user bodyParser
