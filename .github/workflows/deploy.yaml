@@ -39,7 +39,7 @@ jobs:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: cs3219
-          environment_name: cs3219-env-1
+          environment_name: cs3219-env
           region: "ap-southeast-1"
           version_label: "cs3219-${{ steps.format-time.outputs.replaced }}"
           deployment_package: deploy.zip
