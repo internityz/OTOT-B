@@ -1,13 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import routes from "./routes.js";
-import path from "path";
 import cors from "cors";
 
 // Instantiate express
 const app = express();
 
-app.use(express.static(path.join(__dirname, "frontend", "build")));
+app.use(express.static("./frontend/build"));
 app.use(cors()); // config cors so that front-end can use
 // Set our port
 const port = process.env.PORT || 8000;
